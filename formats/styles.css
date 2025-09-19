@@ -1,0 +1,467 @@
+/* Classic Resume Template */
+.classic {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.classic .header {
+    text-align: center;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    margin: -40px -40px 30px -40px;
+    padding: 40px 40px 20px 40px;
+    border-radius: 8px 8px 0 0;
+}
+
+.classic .name {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.classic .contact {
+    font-size: 16px;
+    color: #5a6c7d;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.classic .section {
+    margin-bottom: 30px;
+    border-left: 4px solid #3498db;
+    padding-left: 20px;
+}
+
+.classic .section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.classic .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #3498db;
+}
+
+.classic .content {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #34495e;
+}
+
+/* Modern Resume Template */
+.modern {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modern .header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.modern .name {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.modern .contact {
+    font-size: 16px;
+    opacity: 0.95;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+.modern .section {
+    margin: 0;
+    padding: 30px 40px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.modern .section:last-child {
+    border-bottom: none;
+}
+
+.modern .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.modern .section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-radius: 50%;
+}
+
+.modern .content {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #34495e;
+    padding-left: 25px;
+}
+
+/* Minimal Resume Template */
+.minimal {
+    font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    line-height: 1.8;
+    color: #2c3e50;
+    background: white;
+    box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    border-radius: 4px;
+}
+
+.minimal .header {
+    margin-bottom: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.minimal .name {
+    font-size: 42px;
+    font-weight: 100;
+    margin-bottom: 12px;
+    letter-spacing: 4px;
+    color: #2c3e50;
+    text-transform: uppercase;
+}
+
+.minimal .contact {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.minimal .section {
+    margin-bottom: 45px;
+}
+
+.minimal .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    text-align: center;
+}
+
+.minimal .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background: #bdc3c7;
+}
+
+.minimal .content {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #34495e;
+    text-align: left;
+}
+
+/* Enhanced typography for all templates */
+.classic .content strong,
+.modern .content strong,
+.minimal .content strong {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.classic .content em,
+.modern .content em,
+.minimal .content em {
+    font-style: italic;
+    color: #5a6c7d;
+}
+
+/* Structured Job Entry Formatting */
+.job-entry {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.job-entry:last-child {
+    border-bottom: none;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.job-title-company {
+    flex: 1;
+    min-width: 0;
+}
+
+.job-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.company {
+    font-size: 15px;
+    color: #5a6c7d;
+    font-weight: 500;
+}
+
+.job-meta {
+    text-align: right;
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dates {
+    font-weight: 600;
+    color: #34495e;
+}
+
+.location {
+    color: #7f8c8d;
+}
+
+.job-description {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #f1f3f4;
+    color: #34495e;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* Structured Education Entry Formatting */
+.edu-entry {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.edu-entry:last-child {
+    border-bottom: none;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.degree-school {
+    flex: 1;
+    min-width: 0;
+}
+
+.degree {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.school {
+    font-size: 14px;
+    color: #5a6c7d;
+    font-weight: 500;
+}
+
+.edu-meta {
+    text-align: right;
+    font-size: 13px;
+    color: #7f8c8d;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.gpa {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.edu-description {
+    margin-top: 5px;
+    color: #34495e;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+/* Structured Skills Formatting */
+.skill-category {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.skill-title {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.skill-items {
+    color: #34495e;
+    font-size: 14px;
+}
+
+/* Template-specific adjustments */
+.modern .job-title {
+    color: #2c3e50;
+}
+
+.modern .company {
+    color: #5a6c7d;
+}
+
+.modern .dates {
+    color: #2980b9;
+    font-weight: 600;
+}
+
+.modern .job-description {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 2px solid #ecf0f1;
+}
+
+.minimal .job-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.minimal .job-title {
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.minimal .job-description {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e8eaed;
+    font-weight: 300;
+}
+
+.minimal .skill-title {
+    font-weight: 500;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+    .job-header,
+    .edu-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .job-meta,
+    .edu-meta {
+        text-align: left;
+        margin-top: 5px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .classic,
+    .modern,
+    .minimal {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 20px;
+        max-width: none;
+        margin: 0;
+        background: white !important;
+    }
+    
+    .modern .header {
+        background: #2c3e50 !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .modern .section-title::before {
+        background: #3498db !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
