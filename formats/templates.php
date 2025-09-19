@@ -202,4 +202,113 @@ function generateMinimalTemplate($data) {
         </div>
     </div>';
 }
+
+function generateCreativeTemplate($data) {
+    return '<div class="creative">
+        <div class="header">
+            <div class="name">' . htmlspecialchars($data['full_name']) . '</div>
+            <div class="contact">' . htmlspecialchars($data['email']) . ' | ' . htmlspecialchars($data['phone']) . '<br>' . htmlspecialchars($data['address']) . '</div>
+        </div>
+        
+        <div class="summary-section">
+            <div class="section-title">Professional Summary</div>
+            <div class="content">' . nl2br(htmlspecialchars($data['summary'])) . '</div>
+        </div>
+        
+        <div class="two-column">
+            <div class="main-column">
+                <div class="section">
+                    <div class="section-title">Experience</div>
+                    <div class="content">' . parseExperience($data['experience']) . '</div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">Education</div>
+                    <div class="content">' . parseEducation($data['education']) . '</div>
+                </div>
+            </div>
+            
+            <div class="side-column">
+                <div class="section">
+                    <div class="section-title">Skills</div>
+                    <div class="content">' . parseSkills($data['skills']) . '</div>
+                </div>
+            </div>
+        </div>
+    </div>';
+}
+
+function generateCorporateTemplate($data) {
+    return '<div class="corporate">
+        <div class="header">
+            <div class="name-section">
+                <div class="name">' . htmlspecialchars($data['full_name']) . '</div>
+                <div class="contact">' . htmlspecialchars($data['email']) . ' | ' . htmlspecialchars($data['phone']) . ' | ' . htmlspecialchars($data['address']) . '</div>
+            </div>
+        </div>
+        
+        <div class="executive-summary">
+            <div class="section-title">Executive Summary</div>
+            <div class="content">' . nl2br(htmlspecialchars($data['summary'])) . '</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+            <div class="content">' . parseExperience($data['experience']) . '</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="content">' . parseEducation($data['education']) . '</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Core Competencies</div>
+            <div class="content">' . parseSkills($data['skills']) . '</div>
+        </div>
+    </div>';
+}
+
+function generateTechTemplate($data) {
+    return '<div class="tech">
+        <div class="header">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn close"></span>
+                    <span class="btn minimize"></span>
+                    <span class="btn maximize"></span>
+                </div>
+                <div class="terminal-title">resume.json</div>
+            </div>
+            <div class="name-block">
+                <div class="name">' . htmlspecialchars($data['full_name']) . '</div>
+                <div class="contact">
+                    <span class="property">"email":</span> <span class="string">"' . htmlspecialchars($data['email']) . '"</span><br>
+                    <span class="property">"phone":</span> <span class="string">"' . htmlspecialchars($data['phone']) . '"</span><br>
+                    <span class="property">"location":</span> <span class="string">"' . htmlspecialchars($data['address']) . '"</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="bracket">{</span> about <span class="bracket">}</span></div>
+            <div class="content code-block">' . nl2br(htmlspecialchars($data['summary'])) . '</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="bracket">{</span> experience <span class="bracket">}</span></div>
+            <div class="content">' . parseExperience($data['experience']) . '</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="bracket">{</span> education <span class="bracket">}</span></div>
+            <div class="content">' . parseEducation($data['education']) . '</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="bracket">{</span> skills <span class="bracket">}</span></div>
+            <div class="content tech-skills">' . parseSkills($data['skills']) . '</div>
+        </div>
+    </div>';
+}
 ?>

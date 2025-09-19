@@ -245,6 +245,21 @@ $generated_resumes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             color: #27ae60;
         }
         
+        .template-creative {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 84, 200, 0.1));
+            color: #6b46c1;
+        }
+        
+        .template-corporate {
+            background: rgba(44, 62, 80, 0.1);
+            color: #2c3e50;
+        }
+        
+        .template-tech {
+            background: rgba(45, 52, 54, 0.1);
+            color: #2d3436;
+        }
+        
         .date-text {
             color: var(--text-medium);
         }

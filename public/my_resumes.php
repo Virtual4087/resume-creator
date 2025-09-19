@@ -464,6 +464,287 @@ $selected_template = $_GET['template'] ?? 'classic';
             color: #34495e;
             text-align: left;
         }
+
+        /* Creative Resume Template */
+        .creative {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .creative .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .creative .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+CiAgPC9nPgo8L3N2Zz4K') repeat;
+            opacity: 0.1;
+        }
+
+        .creative .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .creative .contact {
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        .creative .summary-section {
+            background: white;
+            padding: 30px 40px;
+            border-bottom: 3px solid #ff6b6b;
+        }
+
+        .creative .two-column {
+            display: flex;
+            background: white;
+        }
+
+        .creative .main-column {
+            flex: 2;
+            padding: 30px 40px;
+        }
+
+        .creative .side-column {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 30px 25px;
+            border-left: 3px solid #ff6b6b;
+        }
+
+        .creative .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .creative .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+            border-radius: 2px;
+        }
+
+        .creative .content {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #34495e;
+        }
+
+        /* Corporate Resume Template */
+        .corporate {
+            font-family: 'Times New Roman', serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .corporate .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .corporate .name {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .corporate .contact {
+            font-size: 1rem;
+            color: #5a6c7d;
+            font-weight: 500;
+        }
+
+        .corporate .executive-summary {
+            background: #f8f9fa;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2c3e50;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .corporate .section {
+            margin-bottom: 35px;
+        }
+
+        .corporate .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 8px;
+        }
+
+        .corporate .content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #34495e;
+        }
+
+        /* Tech Resume Template */
+        .tech {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .tech .header {
+            background: #2d2d2d;
+            padding: 0;
+        }
+
+        .tech .terminal-header {
+            background: #3c3c3c;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #555;
+        }
+
+        .tech .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tech .terminal-buttons .btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .tech .close { background: #ff5f57; }
+        .tech .minimize { background: #ffbd2e; }
+        .tech .maximize { background: #28ca42; }
+
+        .tech .terminal-title {
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .tech .name-block {
+            padding: 30px 40px;
+            background: #2d2d2d;
+        }
+
+        .tech .name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ff41;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+
+        .tech .contact {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .tech .property {
+            color: #79b6f2;
+        }
+
+        .tech .string {
+            color: #98c379;
+        }
+
+        .tech .section {
+            background: #1e1e1e;
+            margin: 0;
+            padding: 25px 40px;
+            border-bottom: 1px solid #333;
+        }
+
+        .tech .section:last-child {
+            border-bottom: none;
+        }
+
+        .tech .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #61dafb;
+            margin-bottom: 20px;
+            font-family: 'Monaco', monospace;
+        }
+
+        .tech .bracket {
+            color: #ff79c6;
+            font-weight: bold;
+        }
+
+        .tech .content {
+            color: #f8f8f2;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .tech .code-block {
+            background: #282828;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #61dafb;
+            font-family: 'Monaco', monospace;
+        }
+
+        .tech .tech-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
     </style>
 </head>
 <body>
@@ -511,6 +792,24 @@ $selected_template = $_GET['template'] ?? 'classic';
                     <h4 class="template-name">Minimal</h4>
                     <p class="template-description">Clean and simple with maximum readability</p>
                 </a>
+                
+                <!-- Creative Template -->
+                <a href="?template=creative" class="template-option <?php echo $selected_template === 'creative' ? 'active' : ''; ?>">
+                    <h4 class="template-name">Creative</h4>
+                    <p class="template-description">Vibrant design for creative professionals</p>
+                </a>
+                
+                <!-- Corporate Template -->
+                <a href="?template=corporate" class="template-option <?php echo $selected_template === 'corporate' ? 'active' : ''; ?>">
+                    <h4 class="template-name">Corporate</h4>
+                    <p class="template-description">Conservative and formal for business professionals</p>
+                </a>
+                
+                <!-- Tech Template -->
+                <a href="?template=tech" class="template-option <?php echo $selected_template === 'tech' ? 'active' : ''; ?>">
+                    <h4 class="template-name">Tech</h4>
+                    <p class="template-description">Code-inspired design for developers</p>
+                </a>
             </div>
         </div>
         
@@ -531,6 +830,15 @@ $selected_template = $_GET['template'] ?? 'classic';
                         break;
                     case 'minimal':
                         echo generateMinimalTemplate($resume_data);
+                        break;
+                    case 'creative':
+                        echo generateCreativeTemplate($resume_data);
+                        break;
+                    case 'corporate':
+                        echo generateCorporateTemplate($resume_data);
+                        break;
+                    case 'tech':
+                        echo generateTechTemplate($resume_data);
                         break;
                     default:
                         echo generateClassicTemplate($resume_data);
