@@ -79,6 +79,12 @@ $has_data = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
             display: flex;
             align-items: center;
             gap: 1rem;
+            position: relative;
+        }
+        
+        .user-profile {
+            position: relative;
+            cursor: pointer;
         }
         
         .user-avatar {
@@ -92,6 +98,89 @@ $has_data = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
             color: white;
             font-weight: 600;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .user-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+        
+        .profile-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 1rem 0;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+        
+        .profile-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        
+        .dropdown-header {
+            padding: 0 1.5rem 1rem 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            margin-bottom: 0.5rem;
+        }
+        
+        .dropdown-email {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin: 0;
+        }
+        
+        .dropdown-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+        
+        .dropdown-item:hover {
+            background: var(--bg-purple-light);
+            color: var(--accent-color);
+        }
+        
+        .dropdown-item.logout {
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 0.5rem;
+            color: #e74c3c;
+        }
+        
+        .dropdown-item.logout:hover {
+            background: rgba(231, 76, 60, 0.1);
+            color: #c0392b;
+        }
+        
+        .dropdown-icon {
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
         }
         
         .main-content {
@@ -325,17 +414,6 @@ $has_data = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
             align-items: center;
         }
         
-        .logout-btn {
-            margin-left: auto;
-            background: var(--text-medium);
-            color: white;
-        }
-        
-        .logout-btn:hover {
-            background: var(--text-dark);
-            transform: translateY(-1px);
-        }
-        
         .empty-state {
             text-align: center;
             color: var(--text-medium);
@@ -378,10 +456,6 @@ $has_data = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
                 flex-direction: column;
                 align-items: stretch;
             }
-            
-            .logout-btn {
-                margin-left: 0;
-            }
         }
         
         @media (max-width: 480px) {
@@ -410,7 +484,35 @@ $has_data = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
         <div class="nav-content">
             <a href="#" class="logo">ResumeBuilder</a>
             <div class="user-menu">
-                <div class="user-avatar"><?php echo strtoupper(substr($user['email'], 0, 1)); ?></div>
+                <div class="user-profile" onclick="toggleProfileDropdown()">
+                    <div class="user-avatar"><?php echo strtoupper(substr($user['email'], 0, 1)); ?></div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <div class="dropdown-name">Welcome!</div>
+                            <div class="dropdown-email"><?php echo htmlspecialchars($user['email']); ?></div>
+                        </div>
+                        <a href="dashboard.php" class="dropdown-item">
+                            <span class="dropdown-icon">🏠</span>
+                            Dashboard
+                        </a>
+                        <a href="resume_form.php" class="dropdown-item">
+                            <span class="dropdown-icon">📝</span>
+                            Edit Resume Data
+                        </a>
+                        <a href="my_resumes.php" class="dropdown-item">
+                            <span class="dropdown-icon">🎨</span>
+                            Browse Templates
+                        </a>
+                        <a href="resume_history.php" class="dropdown-item">
+                            <span class="dropdown-icon">📄</span>
+                            Resume Library
+                        </a>
+                        <a href="logout.php" class="dropdown-item logout">
+                            <span class="dropdown-icon">🚪</span>
+                            Logout
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -431,7 +533,7 @@ $has_data = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
                     </div>
 
                     <div class="stat-item">
-                        <div class="stat-number">3</div>
+                        <div class="stat-number">6</div>
                         <div class="stat-label">Templates Available</div>
                     </div>
                 </div>
@@ -505,13 +607,37 @@ $has_data = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
                         <a href="my_resumes.php?template=classic" class="btn-modern btn-secondary">Classic Template</a>
                         <a href="my_resumes.php?template=modern" class="btn-modern btn-secondary">Modern Template</a>
                         <a href="my_resumes.php?template=minimal" class="btn-modern btn-secondary">Minimal Template</a>
+                        <a href="my_resumes.php?template=creative" class="btn-modern btn-secondary">Creative Template</a>
+                        <a href="my_resumes.php?template=corporate" class="btn-modern btn-secondary">Corporate Template</a>
+                        <a href="my_resumes.php?template=tech" class="btn-modern btn-secondary">Tech Template</a>
                     <?php else: ?>
                         <div class="empty-state">Add your resume data to unlock quick template generation</div>
                     <?php endif; ?>
-                    <a href="logout.php" class="btn-modern logout-btn">Logout</a>
                 </div>
             </div>
         </div>
     </div>
+    
+    <script>
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profileDropdown');
+            dropdown.classList.toggle('show');
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const userProfile = document.querySelector('.user-profile');
+            const dropdown = document.getElementById('profileDropdown');
+            
+            if (!userProfile.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+        
+        // Prevent dropdown from closing when clicking inside it
+        document.getElementById('profileDropdown').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    </script>
 </body>
 </html>
